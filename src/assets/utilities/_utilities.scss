@@ -1,0 +1,85 @@
+:root {
+  font-size: 62.5%;
+  --clr-primary: hsl(231, 69%, 60%);
+  --clr-secondary: hsl(0, 94%, 66%);
+  --clr-tertiary: hsl(229, 8%, 60%);
+  --clr-quaternary: hsl(229, 31%, 21%);
+
+  --clr-cta: var(--clr-secondary);
+
+  --clr-white: #ffffff;
+  --clr-white-m: rgba(255, 255, 255, 0.3);
+  --clr-black: hsla(0, 0%, 0%);
+  --clr-bb: hsla(0, 0%, 0%, 0.15);
+}
+
+html {
+  overflow-x: hidden !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: 1.8rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+a:link,
+a:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--clr-quaternary);
+}
+
+input[type="text"] {
+  //   -moz-appearance: textfield;
+  min-width: 0;
+  box-sizing: border-box !important;
+}
+
+.desktop-none {
+  @include media-tablet {
+    display: none !important;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+%upper {
+  text-transform: uppercase;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  display: none;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+main {
+  width: unquote($string: "min(90% , 120rem)");
+  height: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  @include media-medium {
+    width: 85%;
+  }
+}

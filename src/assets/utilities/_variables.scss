@@ -1,0 +1,23 @@
+$break-points-up: (
+  "small": 400px,
+  "medium": 700px,
+  "tablet": 860px,
+  "hero": 1000px,
+  "desktop": 1300px,
+);
+
+@function break-point-up($break-point-limit) {
+  @return map-get($map: $break-points-up, $key: $break-point-limit);
+}
+
+$break-points-down: (
+  "small": 399px,
+  "medium": 700px,
+  "tablet": 859px,
+  "hero": 999px,
+  "desktop": 1299px,
+);
+
+@function break-point-down($break-point-limit) {
+  @return map-get($map: $break-points-down, $key: $break-point-limit);
+}
