@@ -10,7 +10,7 @@
   --clr-white: #ffffff;
   --clr-white-m: rgba(255, 255, 255, 0.3);
   --clr-black: hsla(0, 0%, 0%);
-  --clr-bb: hsla(0, 0%, 0%, 0.15);
+  --clr-black-m: hsla(0, 0%, 0%, 0.3);
 }
 
 html {
@@ -24,6 +24,7 @@ body {
 
 body {
   font-size: 1.8rem;
+  background-color: #ffffff;
 }
 
 img {
@@ -54,6 +55,12 @@ input[type="text"] {
   }
 }
 
+.mobile-none {
+  @include media-medium {
+    display: none !important;
+  }
+}
+
 .hidden {
   display: none !important;
 }
@@ -71,15 +78,19 @@ input[type="text"] {
   color: hsl(228, 45%, 44%);
 }
 
-main {
-  width: unquote($string: "min(90% , 120rem)");
-  height: 100%;
+.main {
+  width: unquote($string: "min(90% , 115rem)");
+  // height: 100%;
   margin: 0 auto;
 
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
 
-  @include media-medium {
-    width: 85%;
-  }
+  // @include media-medium {
+  //   width: 85%;
+  // }
+}
+
+.flex {
+  display: flex;
 }

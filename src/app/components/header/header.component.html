@@ -1,1 +1,58 @@
-<p>header works!</p>
+<header>
+  <nav
+    class="main nav flex"
+    aria-label="desktop-navigation"
+    [ngClass]="{ active: viewMobileNav }"
+  >
+    <ul class="nav__list flex">
+      <li class="nav__list--link">
+        <a href="#" class="logo"
+          ><img src="../../../assets/images/logo-bookmark.svg" alt="logo"
+        /></a>
+      </li>
+      <li class="nav__list--link mobile-none"><a href="#">Features</a></li>
+      <li class="nav__list--link mobile-none"><a href="#">Pricing</a></li>
+      <li class="nav__list--link mobile-none"><a href="#">Contact</a></li>
+      <li class="desktop-none">
+        <button class="open-nav" (click)="viewMobileNav = !viewMobileNav">
+          <img
+            src="../../../assets/images/icon-hamburger.svg"
+            alt="icon-hamburger"
+          />
+        </button>
+      </li>
+      <li class="nav__list--link mobile-none"><a href="#">Login</a></li>
+    </ul>
+  </nav>
+
+  <nav
+    *ngIf="viewMobileNav"
+    class="mobile-nav desktop-none"
+    aria-label="mobile-navigation"
+  >
+    <div class="mobile-nav__header flex">
+      <a href="#" class="logo"
+        ><img src="../../../assets/images/logo-bookmark-nav.svg" alt="logo-nav"
+      /></a>
+      <button class="close-btn" (click)="viewMobileNav = !viewMobileNav">
+        <img src="../../../assets/images/icon-close.svg" alt="icon-close" />
+      </button>
+    </div>
+    <ul class="mobile-nav__list flex">
+      <li class="mobile-nav__list--link"><a href="#">Features</a></li>
+      <li class="mobile-nav__list--link"><a href="#">Pricing</a></li>
+      <li class="mobile-nav__list--link"><a href="#">Contact</a></li>
+      <li class="mobile-nav__list--link"><a href="#">Login</a></li>
+    </ul>
+    <footer class="mobile-nav__footer">
+      <ul class="mobile-nav__footer--links flex">
+        <li class="mobile-nav__footer--links__link">
+          <a href="#"><i class="fa-brands fa-facebook-square"></i></a>
+        </li>
+        <li class="mobile-nav__footer--links__link">
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </li>
+      </ul>
+    </footer>
+  </nav>
+</header>
