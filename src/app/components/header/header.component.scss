@@ -7,6 +7,9 @@ header {
   @include media-medium {
     height: 6.5rem;
   }
+
+  position: relative;
+  z-index: 999;
 }
 
 .nav {
@@ -20,6 +23,10 @@ header {
     align-items: center;
     gap: 4rem;
 
+    &--link:not(:last-child, :first-child) {
+      opacity: 0.75;
+    }
+
     &--link:nth-of-type(1) {
       display: flex;
       justify-content: center;
@@ -30,7 +37,7 @@ header {
       margin-left: auto;
     }
 
-    &--link:not(:nth-of-type(1)) {
+    &--link:not(:nth-of-type(1), :last-child) {
       font-size: 0.7em;
       text-transform: uppercase;
       font-weight: 500;
@@ -53,7 +60,6 @@ header {
     &--link:last-child {
       padding: 0.8em 2.3em;
       border: 0.2rem solid var(--clr-secondary);
-      background-color: var(--clr-secondary);
       box-shadow: 0px 10px 12px -10px rgba(0, 0, 0, 0.3);
       border-radius: 0.5rem;
       cursor: pointer;
@@ -76,6 +82,7 @@ header {
       background: none;
       border: 0;
       outline: 0;
+      cursor: pointer;
     }
 
     @include media-medium {
@@ -92,16 +99,20 @@ header {
   position: fixed;
   //   width: 100vw;
   //   height: 100vh;
-  inset: 0;
+  // inset: 0 0 0 100%;
   //   top: 0;
   //   left: 100%;
   //   opacity: 0;
   background-color: var(--clr-quaternary);
-  //   opacity: 0.95;
   padding-inline: 2.2rem;
+  // transition: 0.3s 2s;
   //   transition: left 0.3s ease-in-out;
   //   transform-origin: right;
   animation: slideIn 0.3s linear forwards;
+  // animation-name: slide;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 
   display: flex;
   flex-direction: column;
@@ -115,6 +126,7 @@ header {
       background: none;
       border: none;
       outline: none;
+      cursor: pointer;
     }
   }
 
@@ -180,9 +192,13 @@ header {
   }
 }
 
-// .mobile-nav.active {
-//   inset: 0;
-// }
+.mobile-nav.active {
+  animation-name: slideIn;
+}
+
+.mobile-nav:not(.active) {
+  animation-name: slideOut;
+}
 
 @keyframes slideIn {
   from {
@@ -194,6 +210,20 @@ header {
     // transform: scaleX(1);
     inset: 0;
 
-    opacity: 1;
+    opacity: 0.95;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    // transform: scaleX(1);
+    inset: 0;
+
+    opacity: 0.95;
+  }
+  to {
+    inset: 0 0 0 100%;
+    // transform: scaleX(0);
+    opacity: 0;
   }
 }

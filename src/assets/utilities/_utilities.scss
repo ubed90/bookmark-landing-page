@@ -1,3 +1,5 @@
+@use "sass:color";
+
 :root {
   font-size: 62.5%;
   --clr-primary: hsl(231, 69%, 60%);
@@ -11,6 +13,8 @@
   --clr-white-m: rgba(255, 255, 255, 0.3);
   --clr-black: hsla(0, 0%, 0%);
   --clr-black-m: hsla(0, 0%, 0%, 0.3);
+
+  --line-height: 1.5;
 }
 
 html {
@@ -79,7 +83,8 @@ input[type="text"] {
 }
 
 .main {
-  width: unquote($string: "min(90% , 115rem)");
+  width: unquote($string: "min(100% , 115rem)");
+  padding: 0 2.5rem;
   // height: 100%;
   margin: 0 auto;
 
@@ -93,4 +98,71 @@ input[type="text"] {
 
 .flex {
   display: flex;
+}
+
+.btn {
+  border-radius: 0.5rem;
+  font-weight: 500;
+
+  transition: 0.3s;
+}
+
+.btn-secondary {
+  background-color: var(--clr-secondary);
+}
+
+.btn-primary {
+  background-color: var(--clr-primary);
+  border: 0.1rem solid transparent;
+  color: var(--clr-white) !important;
+
+  &:hover {
+    background-color: var(--clr-white);
+    color: var(--clr-primary) !important;
+    border-color: var(--clr-primary);
+  }
+}
+
+.btn-tertiary {
+  $color-tertiary: change-color(
+    $color: hsl(229, 8%, 60%),
+    $alpha: 0.15,
+  );
+  background-color: $color-tertiary;
+  border: 0.1rem solid transparent;
+  color: var(--clr-black) !important;
+
+  &:hover {
+    background-color: transparent;
+    color: var(--clr-black);
+    border-color: var(--clr-black);
+  }
+}
+
+%sec-padding {
+  padding-block: calc(6vh + 6vw);
+
+  @include media-tablet {
+    padding-block-start: calc(8vh + 5vw);
+    padding-block-end: calc(3vh + 3vw);
+    // padding-block: 0;
+  }
+
+  @include media-desktop {
+    padding-block: 0;
+  }
+}
+
+%sec-title {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  opacity: 0.85;
+  line-height: var(--line-height);
+  margin-bottom: 1rem;
+}
+
+%sec-text {
+  font-size: clamp(0.85em, 2vw, 1em);
+  color: var(--clr-tertiary);
+  line-height: var(--line-height);
+  margin-bottom: 3rem;
 }

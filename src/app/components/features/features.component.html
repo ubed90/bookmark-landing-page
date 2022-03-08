@@ -1,1 +1,95 @@
-<p>features works!</p>
+<section class="features">
+  <div class="features__main main">
+    <div class="features__main--text">
+      <h2 class="features__main--text__title">Features</h2>
+      <p class="features__main--text__text">
+        Our aim is to make it quick and easy for you to access your favourite
+        websites. Your bookmarks sync between your devices so you can access
+        them on the go.
+      </p>
+    </div>
+    <div class="features__main--tab flex">
+      <ul class="features__main--tab__header flex">
+        <li
+          class="features__main--tab__header--title"
+          [ngClass]="{ active: tab === 1 }"
+          (click)="tab = 1"
+        >
+          Simple Bookmarking
+        </li>
+        <li
+          class="features__main--tab__header--title"
+          [ngClass]="{ active: tab === 2 }"
+          (click)="tab = 2"
+        >
+          Speedy Searching
+        </li>
+        <li
+          class="features__main--tab__header--title"
+          [ngClass]="{ active: tab === 3 }"
+          (click)="tab = 3"
+        >
+          Easy Sharing
+        </li>
+      </ul>
+
+      <div class="features__main--tab__tabs" [ngSwitch]="tab">
+        <div class="features__main--tab__tabs--tab tab-1" *ngSwitchCase="1">
+          <div class="features__main--tab__tabs--tab__left flex">
+            <h1 class="features__main--tab__tabs--tab__left--title">
+              Bookmark in one click
+            </h1>
+            <p class="features__main--tab__tabs--tab__left--text">
+              Organize your bookmarks however you like. Our simple drag-and-drop
+              interface gives you complete control over how you manage your
+              favourite sites.
+            </p>
+            <a href="#" class="btn btn-primary mobile-none">More Info</a>
+          </div>
+          <div class="features__main--tab__tabs--tab__right">
+            <img
+              src="../../../assets/images/illustration-features-tab-1.svg"
+              alt="illustration"
+            />
+          </div>
+        </div>
+        <div class="features__main--tab__tabs--tab tab-2" *ngSwitchCase="2">
+          <div class="features__main--tab__tabs--tab__left flex">
+            <h1 class="features__main--tab__tabs--tab__left--title">
+              Intelligent search
+            </h1>
+            <p class="features__main--tab__tabs--tab__left--text">
+              Our powerful search feature will help you find saved sites in no
+              time at all. No need to trawl through all of your bookmarks.
+            </p>
+            <a href="#" class="btn btn-primary mobile-none">More Info</a>
+          </div>
+          <div class="features__main--tab__tabs--tab__right">
+            <img
+              src="../../../assets/images/illustration-features-tab-2.svg"
+              alt="illustration"
+            />
+          </div>
+        </div>
+        <div class="features__main--tab__tabs--tab tab-3" *ngSwitchCase="3">
+          <div class="features__main--tab__tabs--tab__left flex">
+            <h1 class="features__main--tab__tabs--tab__left--title">
+              Share your bookmarks
+            </h1>
+            <p class="features__main--tab__tabs--tab__left--text">
+              Easily share your bookmarks and collections with others. Create a
+              shareable link that you can send at the click of a button.
+            </p>
+            <a href="#" class="btn btn-primary mobile-none">More Info</a>
+          </div>
+          <div class="features__main--tab__tabs--tab__right">
+            <img
+              src="../../../assets/images/illustration-features-tab-3.svg"
+              alt="illustration"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

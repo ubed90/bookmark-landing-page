@@ -1,0 +1,218 @@
+@use "sass:list";
+@import "../../../assets/utilities/variables";
+@import "../../../assets/utilities/mixins";
+@import "../../../assets/utilities/utilities";
+
+$afterSizes: (13rem, 12rem, 8rem);
+$color-tertiary: change-color(
+  $color: hsl(229, 8%, 60%),
+  $alpha: 0.4,
+);
+
+.features {
+  &__main {
+    @extend %sec-padding;
+
+    text-align: center;
+
+    &--text {
+      &__title {
+        @extend %sec-title;
+      }
+
+      &__text {
+        @extend %sec-text;
+        max-width: 44ch;
+        margin-inline: auto;
+      }
+    }
+
+    &--tab {
+      flex-direction: column;
+      gap: 7rem;
+
+      &__header {
+        flex-direction: column;
+
+        &--title {
+          position: relative;
+          padding-block: 1.6rem;
+          font-size: 0.95em;
+          color: hsla(0, 0%, 0%, 0.6);
+          border-block-start: 0.1rem solid $color-tertiary;
+          cursor: pointer;
+        }
+
+        &--title:last-child {
+          border-block-end: 0.1rem solid $color-tertiary;
+        }
+
+        &--title.active {
+          color: var(--clr-black);
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            height: 0.4rem;
+            transform: translateX(-50%);
+            background-color: var(--clr-secondary);
+          }
+        }
+
+        @for $i from 1 through 3 {
+          &--title:nth-child(#{$i}) {
+            &::after {
+              width: list.nth($afterSizes, $i);
+            }
+          }
+        }
+      }
+
+      &__tabs {
+        &--tab {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-gap: 4rem 0;
+          grid-template-rows: repeat(2, max-content);
+
+          &__left {
+            --gap: 1rem;
+            line-height: 1.3;
+            order: 1;
+
+            flex-direction: column;
+            text-align: center;
+            gap: var(--gap);
+
+            &--title {
+              @extend %sec-title;
+              margin-bottom: 0;
+              font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+            }
+
+            &--text {
+              @extend %sec-text;
+              margin-bottom: 0;
+            }
+          }
+
+          &__right {
+            width: 115%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+
+            img {
+              width: 87%;
+              aspect-ratio: 1;
+              object-fit: contain;
+              position: relative;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              //   width: 100%;
+              //   height: 100%;
+              //   top: 0;
+              //   left: 0;
+              inset: 30% 20% 0 -1%;
+              border-bottom-right-radius: 10rem;
+              border-top-right-radius: 15rem;
+              background-color: var(--clr-primary);
+              z-index: -1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include media-tablet {
+    &__main {
+      &--tab {
+        margin-top: 5rem;
+        gap: 4rem;
+
+        &__header {
+          align-self: center;
+          flex-direction: row;
+          border-bottom: 0.1rem solid $color-tertiary;
+
+          &--title,
+          &--title:last-child {
+            border: none;
+          }
+
+          &--title {
+            padding: 2.6rem 4rem;
+
+            &::after {
+              width: 100% !important;
+            }
+          }
+        }
+
+        &__tabs {
+          &--tab {
+            grid-template-rows: 1fr;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            grid-gap: 0 6rem;
+
+            &__left {
+              text-align: left;
+
+              &--title {
+                font-weight: 500;
+                opacity: 0.75;
+              }
+
+              &--text {
+                font-size: 1.05em;
+                font-weight: 400;
+                max-width: 38ch;
+              }
+
+              .btn {
+                font-size: 0.7em;
+                margin-top: 1rem;
+                align-self: flex-start;
+                padding: 1.3rem 2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.tab-1 {
+  .features__main--tab__tabs--tab__right {
+    &::after {
+      inset: 30% 20% 7% -1%;
+    }
+  }
+}
+
+.tab-2 {
+  .features__main--tab__tabs--tab__right {
+    &::after {
+      inset: 20% 20% 0 -1%;
+    }
+  }
+}
+
+.tab-3 {
+  .features__main--tab__tabs--tab__right {
+    &::after {
+      inset: 25% 20% 0 -1%;
+    }
+  }
+}

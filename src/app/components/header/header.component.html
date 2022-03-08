@@ -13,15 +13,17 @@
       <li class="nav__list--link mobile-none"><a href="#">Features</a></li>
       <li class="nav__list--link mobile-none"><a href="#">Pricing</a></li>
       <li class="nav__list--link mobile-none"><a href="#">Contact</a></li>
-      <li class="desktop-none">
-        <button class="open-nav" (click)="viewMobileNav = !viewMobileNav">
+      <li class="desktop-none hamburger">
+        <button class="open-nav" (click)="openMobileNav()">
           <img
             src="../../../assets/images/icon-hamburger.svg"
             alt="icon-hamburger"
           />
         </button>
       </li>
-      <li class="nav__list--link mobile-none"><a href="#">Login</a></li>
+      <li class="nav__list--link mobile-none btn-secondary">
+        <a href="#">Login</a>
+      </li>
     </ul>
   </nav>
 
@@ -29,12 +31,13 @@
     *ngIf="viewMobileNav"
     class="mobile-nav desktop-none"
     aria-label="mobile-navigation"
+    [ngClass]="{ active: viewMobileNav }"
   >
     <div class="mobile-nav__header flex">
       <a href="#" class="logo"
         ><img src="../../../assets/images/logo-bookmark-nav.svg" alt="logo-nav"
       /></a>
-      <button class="close-btn" (click)="viewMobileNav = !viewMobileNav">
+      <button class="close-btn cross" (click)="closeMobileNav()">
         <img src="../../../assets/images/icon-close.svg" alt="icon-close" />
       </button>
     </div>

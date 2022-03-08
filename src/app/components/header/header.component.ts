@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +8,22 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   viewMobileNav: boolean = false;
 
-  constructor() {}
+  constructor(private el: ElementRef) {}
 
   ngOnInit(): void {}
+
+  openMobileNav(): void {
+    this.viewMobileNav = !this.viewMobileNav;
+    document.body.style.overflowY = 'hidden';
+  }
+
+  closeMobileNav(): void {
+    this.el.nativeElement
+      .querySelector('.mobile-nav')
+      .classList.remove('active');
+    setTimeout(() => {
+      this.viewMobileNav = !this.viewMobileNav;
+      document.body.style.overflowY = 'initial';
+    }, 400);
+  }
 }
