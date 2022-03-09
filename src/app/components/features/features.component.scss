@@ -191,12 +191,46 @@ $color-tertiary: change-color(
       }
     }
   }
+
+  @include media-desktop {
+    position: relative;
+    min-height: 100vh;
+
+    &__main {
+      &--tab {
+        gap: 6rem;
+        &__tabs {
+          &--tab {
+            &__right {
+              width: 100%;
+              position: static;
+              left: initial;
+              transform: none;
+
+              img {
+                width: 100%;
+                aspect-ratio: initial;
+                object-fit: initial;
+                position: initial;
+                left: initial;
+                transform: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .tab-1 {
   .features__main--tab__tabs--tab__right {
     &::after {
-      inset: 30% 20% 7% -1%;
+      @include media-desktop {
+        inset: 52% 57% 4% 0;
+        border-bottom-right-radius: 12rem;
+        border-top-right-radius: 15rem;
+      }
     }
   }
 }
@@ -205,6 +239,12 @@ $color-tertiary: change-color(
   .features__main--tab__tabs--tab__right {
     &::after {
       inset: 20% 20% 0 -1%;
+
+      @include media-desktop {
+        inset: 53% 59% -2% 0;
+        border-bottom-right-radius: 15rem;
+        border-top-right-radius: 15rem;
+      }
     }
   }
 }
@@ -213,6 +253,12 @@ $color-tertiary: change-color(
   .features__main--tab__tabs--tab__right {
     &::after {
       inset: 25% 20% 0 -1%;
+
+      @include media-desktop {
+        inset: 54% 57% -8% 0;
+        border-bottom-right-radius: 14rem;
+        border-top-right-radius: 15rem;
+      }
     }
   }
 }
