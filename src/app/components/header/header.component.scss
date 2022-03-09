@@ -23,6 +23,10 @@ header {
     align-items: center;
     gap: 4rem;
 
+    &--link {
+      transition: 0.3s;
+    }
+
     &--link:not(:last-child, :first-child) {
       opacity: 0.75;
     }

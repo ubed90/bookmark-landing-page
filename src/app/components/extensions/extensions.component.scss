@@ -1,3 +1,109 @@
 @import "../../../assets/utilities/variables";
 @import "../../../assets/utilities/mixins";
 @import "../../../assets/utilities/utilities";
+
+.extensions {
+  &__main {
+    @extend %sec-padding;
+
+    text-align: center;
+
+    &--text {
+      &__title {
+        @extend %sec-title;
+      }
+
+      &__text {
+        @extend %sec-text;
+        max-width: 30ch;
+        margin-inline: auto;
+      }
+    }
+
+    &--cards {
+      margin-block-start: 5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 4rem;
+      column-gap: 3rem;
+      &__card {
+        flex: 1 1 30%;
+        min-width: 30rem;
+        max-width: 30rem;
+        border-radius: 1.6rem;
+        box-shadow: 0px 10px 30px -20px rgba(0, 0, 0, 0.5);
+        flex-direction: column;
+        align-items: center;
+        row-gap: 4rem;
+
+        &--top {
+          padding-block-start: 5rem;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          row-gap: 1rem;
+
+          &__img {
+            margin-block-end: 2.4rem;
+          }
+
+          &__title {
+            font-size: 1.1em;
+            color: var(--clr-quaternary);
+          }
+
+          &__text {
+            font-size: 0.8em;
+            color: var(--clr-tertiary);
+          }
+        }
+
+        &--bottom {
+          width: 100%;
+          padding: 2.6rem;
+          border-top: 5px solid transparent;
+          border-image: url(../../../assets/images/bg-dots.svg) 10 stretch;
+
+          a {
+            padding: 1.3rem 3rem;
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-desktop {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: calc(7vh + 5vw);
+
+    &__main {
+      &--text {
+        &__text {
+          max-width: 50ch;
+        }
+      }
+      &--cards {
+        height: 70vh;
+        margin-block-start: 0;
+      }
+    }
+
+    .card-1 {
+      align-self: flex-start;
+    }
+
+    .card-2 {
+      align-self: center;
+    }
+
+    .card-3 {
+      align-self: flex-end;
+    }
+  }
+}
