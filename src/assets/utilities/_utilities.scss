@@ -143,7 +143,7 @@ input[type="text"] {
   padding-block: calc(6vh + 6vw);
 
   @include media-tablet {
-    padding-block-start: calc(8vh + 5vw);
+    padding-block-start: calc(6vh + 5vw);
     padding-block-end: calc(3vh + 3vw);
     // padding-block: 0;
   }

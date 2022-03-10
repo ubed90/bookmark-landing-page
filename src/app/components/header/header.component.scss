@@ -62,7 +62,8 @@ header {
     }
 
     &--link:last-child {
-      padding: 0.8em 2.3em;
+      font-size: 0.75em;
+      padding: 0.75em 2.3em;
       border: 0.2rem solid var(--clr-secondary);
       box-shadow: 0px 10px 12px -10px rgba(0, 0, 0, 0.3);
       border-radius: 0.5rem;

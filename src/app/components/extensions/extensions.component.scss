@@ -63,7 +63,7 @@
           width: 100%;
           padding: 2.6rem;
           border-top: 5px solid transparent;
-          border-image: url(../../../assets/images/bg-dots.svg) 10 stretch;
+          border-image: url(../../../assets/images/bg-dots.svg) 10;
 
           a {
             padding: 1.3rem 3rem;
@@ -84,13 +84,13 @@
 
     &__main {
       &--text {
+        margin-block-end: 1rem;
         &__text {
           max-width: 50ch;
         }
       }
       &--cards {
-        height: 70vh;
-        margin-block-start: 0;
+        height: 60vh;
       }
     }
 
