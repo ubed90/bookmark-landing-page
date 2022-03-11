@@ -25,6 +25,7 @@ header {
 
     &--link {
       transition: 0.3s;
+      cursor: pointer;
     }
 
     &--link:not(:last-child, :first-child) {
@@ -140,6 +141,7 @@ header {
     text-align: center;
 
     &--link {
+      cursor: pointer;
       padding-block: 1em;
       border: 0.1rem solid var(--clr-white-m);
       border-bottom: 0;

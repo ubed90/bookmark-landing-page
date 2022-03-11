@@ -10,9 +10,15 @@
           ><img src="../../../assets/images/logo-bookmark.svg" alt="logo"
         /></a>
       </li>
-      <li class="nav__list--link mobile-none"><a href="#">Features</a></li>
-      <li class="nav__list--link mobile-none"><a href="#">Pricing</a></li>
-      <li class="nav__list--link mobile-none"><a href="#">Contact</a></li>
+      <li class="nav__list--link mobile-none">
+        <a (click)="emitScroll('#features')">Features</a>
+      </li>
+      <li class="nav__list--link mobile-none">
+        <a (click)="emitScroll('#extensions')">Pricing</a>
+      </li>
+      <li class="nav__list--link mobile-none">
+        <a (click)="emitScroll('#contact-us')">Contact</a>
+      </li>
       <li class="desktop-none hamburger">
         <button class="open-nav" (click)="openMobileNav()">
           <img
@@ -42,9 +48,15 @@
       </button>
     </div>
     <ul class="mobile-nav__list flex">
-      <li class="mobile-nav__list--link"><a href="#">Features</a></li>
-      <li class="mobile-nav__list--link"><a href="#">Pricing</a></li>
-      <li class="mobile-nav__list--link"><a href="#">Contact</a></li>
+      <li class="mobile-nav__list--link">
+        <a (click)="emitScroll('#features')">Features</a>
+      </li>
+      <li class="mobile-nav__list--link">
+        <a (click)="emitScroll('#extensions')">Pricing</a>
+      </li>
+      <li class="mobile-nav__list--link">
+        <a (click)="emitScroll('#contact-us')">Contact</a>
+      </li>
       <li class="mobile-nav__list--link"><a href="#">Login</a></li>
     </ul>
     <footer class="mobile-nav__footer">

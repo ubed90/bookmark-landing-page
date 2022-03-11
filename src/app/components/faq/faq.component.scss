@@ -61,7 +61,7 @@ $color-tertiary: change-color(
           margin-top: 0.3rem;
           width: 1.5rem;
           aspect-ratio: 1;
-          appearance: none;
+          appearance: none !important;
           -webkit-appearance: none;
           background-image: url(../../../assets/images/icon-arrow.svg);
           background-repeat: no-repeat;

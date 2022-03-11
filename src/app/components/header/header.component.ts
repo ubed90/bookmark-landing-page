@@ -1,4 +1,10 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  OnInit,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +13,8 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   viewMobileNav: boolean = false;
+
+  @Output() scrollEvent: EventEmitter<string> = new EventEmitter();
 
   constructor(private el: ElementRef) {}
 
@@ -25,5 +33,12 @@ export class HeaderComponent implements OnInit {
       this.viewMobileNav = !this.viewMobileNav;
       document.body.style.overflowY = 'initial';
     }, 400);
+  }
+
+  emitScroll(section: string) {
+    if (this.viewMobileNav) {
+      this.closeMobileNav();
+    }
+    this.scrollEvent.emit(section);
   }
 }

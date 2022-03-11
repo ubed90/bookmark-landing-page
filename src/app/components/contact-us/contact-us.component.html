@@ -1,1 +1,36 @@
-<p>35,000+ already joined Stay up-to-date with what we’re doing Contact Us</p>
+<section class="contact-us" id="contact-us">
+  <div class="contact-us__main main">
+    <p class="contact-us__main--subscript">35,000+ already joined</p>
+    <h2 class="contact-us__main--title">
+      Stay up-to-date with what<br />we’re doing
+    </h2>
+    <form
+      #contactUsForm="ngForm"
+      class="contact-us__main--form"
+      (ngSubmit)="onSubmit(contactUsForm)"
+    >
+      <div class="form-group">
+        <input
+          type="email"
+          name="email"
+          ngModel
+          required
+          email
+          #email="ngModel"
+          placeholder="Enter your email address"
+        />
+        <div [hidden]="email.valid || email.pristine" class="error">
+          <img src="../../../assets/images/icon-error.svg" alt="icon-error" />
+          <span><em>Whoops, make sure it's an email</em></span>
+        </div>
+      </div>
+      <button
+        type="submit"
+        [disabled]="contactUsForm.invalid"
+        class="btn btn-secondary"
+      >
+        Contact Us
+      </button>
+    </form>
+  </div>
+</section>
