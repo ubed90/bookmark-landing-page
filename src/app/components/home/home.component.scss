@@ -1,0 +1,107 @@
+@import "../../../assets/utilities/variables";
+@import "../../../assets/utilities/mixins";
+@import "../../../assets/utilities/utilities";
+
+.about-dev-link {
+  --hue-color: 210;
+  width: calc(2vh + 3vw);
+  aspect-ratio: 1;
+  position: fixed;
+  right: 2.5rem;
+  bottom: 110%;
+  z-index: 5;
+  transition: 0.5s;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    to right bottom,
+    hsl(var(--hue-color), 92%, 85%),
+    hsl(var(--hue-color), 69%, 61%)
+  );
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: 0.3s;
+    position: absolute;
+    left: 50%;
+    bottom: -0.5rem;
+    transform: translateX(-40%);
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: 0.3s;
+  }
+
+  &::before {
+    content: "About-Dev";
+    font-size: 0.5em;
+    color: var(--clr-white);
+    top: -3.1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    background-color: var(--clr-black);
+    padding: 0.4em 0.8em;
+    border-radius: 2rem;
+    font-weight: 500;
+  }
+
+  &::after {
+    content: "";
+    border: 0.7rem solid transparent;
+    border-top-color: var(--clr-black);
+    top: -1.3rem;
+    left: 50%;
+    transform: translateX(-70%);
+  }
+
+  &:hover {
+    img {
+      filter: sepia(100%);
+    }
+
+    &::before,
+    &::after {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+
+  &.active {
+    bottom: 2.5rem;
+  }
+
+  @include media-mobile {
+    &::before {
+      top: -3rem;
+      left: -1.5rem;
+      font-size: 0.5em;
+    }
+
+    &::after {
+      border-width: 0.7rem;
+      top: -1.2rem;
+      transform: translateX(-50%);
+    }
+  }
+
+  @include media-tablet {
+    &::before {
+      top: -3.4rem;
+      font-size: 0.6em;
+    }
+
+    &::after {
+      border-width: 0.8rem;
+      top: -1.2rem;
+      transform: translateX(-50%);
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<main (scroll)="scrolling($event)">
+  <!-- Header Compoenent -->
+  <app-header (scrollEvent)="scrollToSection($event)"></app-header>
+
+  <!-- Hero Compoenent -->
+  <app-hero></app-hero>
+
+  <!-- Features Compoenent -->
+  <app-features></app-features>
+
+  <!-- Extensions Compoenent -->
+  <app-extensions></app-extensions>
+
+  <!-- FAQ Compoenent -->
+  <app-faq></app-faq>
+
+  <!-- CONTACT-US Compoenent -->
+  <app-contact-us></app-contact-us>
+
+  <!-- FOOTER Compoenent -->
+  <app-footer></app-footer>
+
+  <a
+    [routerLink]="['about-dev']"
+    class="about-dev-link"
+    [ngClass]="{ active: scroll }"
+    ><img src="../../../assets/images/About_Me.png" alt="about-me"
+  /></a>
+</main>

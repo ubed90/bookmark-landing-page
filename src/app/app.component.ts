@@ -7,14 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bookmark-landing-page';
-
-  scrollToSection(section: string): void {
-    let sectionToScroll = <HTMLElement>document.querySelector(section);
-    sectionToScroll.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-      inline: 'nearest',
-    });
-    // console.log(sectionToScroll);
-  }
 }

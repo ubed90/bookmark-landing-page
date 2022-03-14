@@ -12,6 +12,8 @@ import { FaqComponent } from './components/faq/faq.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AboutDevComponent } from './components/about-dev/about-dev.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FaqComponent,
     ContactUsComponent,
     FooterComponent,
+    AboutDevComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
