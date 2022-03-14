@@ -1,27 +1,60 @@
-# BookmarkLandingPage
+# Frontend Mentor - Bookmark landing page solution
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.4.
+This is a solution to the [Bookmark landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/bookmark-landing-page-5d0b588a9edda32581d29158). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Development server
+## Table of contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-## Code scaffolding
+## Overview
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### The challenge
 
-## Build
+Users should be able to:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Receive an error message when the newsletter form is submitted if:
+  - The input field is empty
+  - The email address is not formatted correctly
 
-## Running unit tests
+### Screenshot
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![](./screenshot.png)
 
-## Running end-to-end tests
+### Links
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Solution URL: [Click Here 🚀](https://github.com/ubed90/bookmark-landing-page)
+- Live Site URL: [Click Here 🚀](https://your-live-site-url.com)
 
-## Further help
+## My process
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [Angular](https://angular.io/)
+
+### What I learned
+
+Learned to implement Single Page Applications in Popular JavaScript Framework Angular. Explored the power and Possibilities of Angular.
+
+### Useful resources
+
+- [Angular Documentation](https://angular.io/) - This helped me for Implementing Angular.
+
+## Author
+
+- Website - [Ubed Shaikh](https://github.com/ubed90)
+- Frontend Mentor - [UbedS](https://www.frontendmentor.io/profile/ubed90)
