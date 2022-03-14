@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Click Here 🚀](https://github.com/ubed90/bookmark-landing-page)
-- Live Site URL: [Click Here 🚀](https://your-live-site-url.com)
+- Live Site URL: [Click Here 🚀](https://ubed90.github.io/bookmark-landing-page/)
 
 ## My process
 
