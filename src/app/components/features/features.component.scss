@@ -227,7 +227,7 @@ $color-tertiary: change-color(
   .features__main--tab__tabs--tab__right {
     &::after {
       @include media-desktop {
-        inset: 52% 57% 4% 0;
+        inset: 54% 57% 1% 0;
         border-bottom-right-radius: 12rem;
         border-top-right-radius: 15rem;
       }
